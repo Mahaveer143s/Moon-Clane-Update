@@ -12,32 +12,6 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .navbar {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar-nav .nav-link {
-            color: black;
-            font-size: 1.5rem; /* fs-2 */
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: #333;
-        }
-
-        .navbar-pill {
-            border-radius: 50px;
-        }
-
-        .rounded-5 {
-            border-radius: 20px;
-        }
-
-        .hover-grow:hover {
-            transform: scale(1.1);
-            transition: 0.3s;
-        }
-
         .narroto {
             font-family: 'Roboto', sans-serif;
             letter-spacing: 0.5px;
@@ -64,51 +38,79 @@
 
 <body class="bg-white text-black">
 
+    <!-- Navbar -->
+    <nav class="navbar ">
+        <div class="container">
+        <div class="navbar-links fw-bold fs-4">
+            <a href="#" class="fs-5">Shop</a>
+            <a href="#" class="fs-5">About</a>
+            <a href="#" class="fs-5">Contact</a>
+        </div>
 
-    <!-- Header/Navbar -->
-    <nav class="navbar  navbar-expand-lg navbar-light bg-white sticky-top px-3">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse px-5" id="navbarNav">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item"><a class="nav-link " href="shop.html" style="font-weight: 500;">SHOP</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html" style="font-weight: 500;">ABOUT</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html" style="font-weight: 500;">CONTACT US</a></li>
-            </ul>
-            <a class="navbar-brand fw-bold bg-none me-auto" href="index.html"><img src="img/logo.png"  height="80px" alt="logo"/></a>
-        
-            <div class="d-flex align-items-center">
-                <div class="input-group navbar-pill me-2 rounded-pill border">
-                    <span class="input-group-text bg-white border rounded-pill ">
-                        <i class="fas fa-search"></i>
-                    </span>
-                    <input type="text" class="form-control border-0 rounded-pill" placeholder="Search...">
-                </div>
-                <button class="btn btn-none border-0 bg-0 mx-2"><i class="fa-regular fa-heart"></i></button>
-                <button class="btn btn-none border-0 mx-2"><i class="bi bi-bag"></i></button>
-                <button class="btn btn-none border-0 mx-2"><i class="fa-regular fa-user"></i></button>
-                <button class="btn btn-dark border-0 mx-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
-                    <i class="fas fa-bars fs-4"></i>
-                </button>
+
+        <a href="#" class="navbar-brand">
+            <img src="img/logo.png" alt="Logo" class="desktop-logo" >
+            <img src="img/moonclon-logo.png" alt="Mobile Logo" class="mobile-logo">
+        </a>
+        <div class="search-bar-container-lg ">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search for products...">
             </div>
         </div>
-    </nav>
-    <!-- Sidebar -->
-    <div class="offcanvas offcanvas-end" id="offcanvasMenu">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Menu</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+
+        <div class="navbar-icons">
+            <div class="icon-counter">
+                <i class="fa-regular fa-heart fa-lg"></i>
+                <span class="badge">0</span>
+            </div>
+            <div class="icon-counter">
+                <i class="fa-solid fa-bag-shopping fa-lg"></i>
+                <span class="badge">2</span>
+            </div>
+            <i class="fa-regular fa-user fa-lg"></i>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
         </div>
-        <div class="offcanvas-body">
-            <ul class="list-unstyled ">
-                <li><a href="shop.html" class="text-dark text-uppercase">SHOP</a></li>
-                <li><a href="#" class="text-dark text-uppercase">ABOUT</a></li>
-                <li><a href="#" class="text-dark text-uppercase">CONTACT US</a></li>
-            </ul>
+    </div>
+    </nav>
+
+    <!-- Search Bar (Mobile View) -->
+    <div class="search-bar-container d-md-none">
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search for products...">
         </div>
     </div>
 
+    <!-- Offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-end bg-dark" id="offcanvasMenu">
+        <div class="offcanvas-header">
+            
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas">X</button>
+        </div>
+        
+        <div class="offcanvas-body">
+            <div class="d-flex justify-content-center">
+            <div class="half-circle-container">
+                <img src="img/about-bg-2.png" alt="Half Circle and Square">
+            </div>
+        </div>
+            <ul>
+                <li><a href="#" class="fw-bold fs-5">Shop</a></li>
+                <li><a href="#" class="fw-bold fs-5">About</a></li>
+                <li><a href="#" class="fw-bold fs-5">Contact Us</a></li>
+            </ul>
+            <div class="d-flex justify-content-between center">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook fs-2"></i></a>
+                <a href="#"><i class="fab fa-twitter fs-2"></i></a>
+                <a href="#"><i class="fab fa-instagram fs-2"></i></a>
+            </div>
+        </div>
+        </div>
+    </div>
     <!-- Carousel -->
     <div class="container mt-4 ">
         <div id="mainCarousel" class="carousel slide rounded-5" data-bs-ride="carousel">

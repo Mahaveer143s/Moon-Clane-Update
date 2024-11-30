@@ -12,7 +12,22 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        
+        .navbar {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-nav .nav-link {
+            color: black;
+            font-size: 1.5rem; /* fs-2 */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #333;
+        }
+
+        .navbar-pill {
+            border-radius: 50px;
+        }
 
         .rounded-5 {
             border-radius: 20px;
@@ -51,32 +66,61 @@
             font-weight: bold;
             margin-bottom: 20px;
         }
-        .contact-info {
-            padding-bottom: 20px;
-        }
-        .contact-info p {
-            margin: 0;
-        }
-        .form-control {
-            border: none;
-            border: 1px solid #ccc;
-            border-radius: 0;
-            margin-bottom: 15px;
-        }
-        .form-control:focus {
-            box-shadow: none;
-            border-color: #000;
-        }
-        .btn-send {
-            background-color: #000;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-        }
-        .btn-send:hover {
-            background-color: #333;
-        }
-        
+        .header-image {
+      background-image: url('img/waitlist-img.png'); /* Replace with actual image URL */
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      position: relative;
+    }
+
+    .header-title {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .wishlist-container {
+      margin: 50px auto;
+      max-width: 1200px;
+    }
+
+    .wishlist-box {
+      border: 1px solid #1c1c1cb4;
+      border-radius: 0px;
+      padding: 20px;
+    }
+    .wishlist-row-wrapper {
+  overflow-x: auto; /* Enables horizontal scrolling */
+  white-space: nowrap; /* Prevents elements from wrapping */
+  padding-bottom: 10px; /* Adds padding for scrollbar */
+}
+
+    .wishlist-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .wishlist-row img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+    }
+
+    .wishlist-buttons .btn {
+      margin-left: 10px;
+    }
+
+    .wishlist-actions {
+      display: flex;
+      justify-content: space-between;
+    }
+   
     </style>
 </head>
 
@@ -156,43 +200,71 @@
         </div>
     </div>
 <body >
-    <!-- Header Image -->
-    <header class="container">
-        <img src="img/header-banner-1.jpg" alt="Header Image" class="header-image pt-5 shadow">
-    </header>
+    <section class="py-5 container px-3">
+          <!-- Header Image Section -->
+  <div class="header-image">
+  </div>
 
-    <!-- Contact Section -->
-    <section class="container px-5 py-5" style="color:#333333e2;font-family: 'Nunito Sans','sans-serif';">    
-        <div class="row">
-            <!-- Left Column -->
-            <div class="col-lg-6">
-                <h3 class="section-heading mb-5">Our Information</h3>
-                <p class="contact-info">
-                    Vijayawada (Head Office), Krishna, Andhra Pradesh (AP), India (IN), Pin Code: 520001
-                </p>
-                <p class="contact-info">+91 987654321</p>
-                <p class="contact-info">info@themoonclan.in</p>
-            </div>
-            <!-- Right Column -->
-            <div class="col-lg-6">
-                <h3 class="section-heading mb-5">Say Something...</h3>
-                <form>
-                    <input type="text" class="form-control p-2" placeholder="First Name" required>
-                    <input type="email" class="form-control p-2" placeholder="Email" required>
-                    <input type="tel" class="form-control p-2" placeholder="Phone" required>
-                    <select class="form-control p-2" required>
-                        <option value="" disabled selected>Reason for Contact</option>
-                        <option value="1">General Inquiry</option>
-                        <option value="2">Support</option>
-                        <option value="3">Feedback</option>
-                    </select>
-                    <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn btn-send mt-3">Send Message</button>
-                </form>
-            </div>
+  <!-- Wishlist Container -->
+  <div class="wishlist-container">
+    <div class="text-dark fs-3 mb-3">Default Wishlist</div>
+    <div class="wishlist-box">
+      <!-- Scrollable Row Wrapper -->
+      <div class="wishlist-row-wrapper" style="overflow-x: auto; white-space: nowrap;">
+        <div class="wishlist-row d-flex align-items-center" style="min-width: 900px;">
+          <!-- Column 1: Checkbox -->
+          <input type="checkbox" aria-label="Select Product">
+  
+          <!-- Column 2: Product Image -->
+          <img src="img/product-1.png" alt="Product Image" style="width: 100px; height: auto; margin: 0 10px;">
+  
+          <!-- Column 3: Product Title -->
+          <div style="min-width: 150px; margin: 0 10px;">Neo Nude Foundation</div>
+  
+          <!-- Column 4: Price -->
+          <div style="min-width: 100px; margin: 0 10px;">₹4,999.00</div>
+  
+          <!-- Column 5: Date -->
+          <div style="min-width: 150px; margin: 0 10px;">November 30, 2024</div>
+  
+          <!-- Column 6: Stock Status -->
+          <div style="min-width: 120px; margin: 0 10px;">
+            <span>&#10003;</span> In stock
+          </div>
+  
+          <!-- Column 7: Add to Cart Button -->
+          <button class="btn btn-dark btn-sm m-2" style="margin: 0 10px;">Add to Cart</button>
+  
+          <!-- Column 8: Close Button -->
+          <button class="btn btn-danger btn-sm m-2" style="margin: 0 10px;">&times;</button>
         </div>
-    </section>
-    <div class="container d-flex justify-content-center">
+      </div>
+  
+      <!-- Action Buttons -->
+      <div class="wishlist-actions mt-3">
+        <!-- Left Buttons -->
+        <div>
+          <select class="form-select d-inline w-auto m-2">
+            <option>Actions</option>
+            <option>Remove Selected</option>
+          </select>
+          <button class="btn btn-dark m-2">Apply Action</button>
+        </div>
+  
+        <!-- Right Buttons -->
+        <div class="wishlist-buttons m-2">
+          <button class="btn btn-dark m-2">Add Selected to Cart</button>
+          <button class="btn btn-dark m-2">Add All to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+     </section>
+    
+
+     <div class="container d-flex justify-content-center">
 
     
         <img src="img/logo.png"  width="90%"/>
@@ -209,9 +281,9 @@
                     <div class="col-md-3">
                         <h6 class="text-uppercase fs-5 fw-bold">Navigate</h6>
                         <ul class="list-unstyled " >
-                            <li><a href="#" class="text-dark a-none">Shop</a></li>
-                            <li><a href="#" class="text-dark a-none">About</a></li>
-                            <li><a href="#" class="text-dark a-none">Contact Us</a></li>
+                            <li><a href="shop.html" class="text-dark a-none">Shop</a></li>
+                            <li><a href="about.html" class="text-dark a-none">About</a></li>
+                            <li><a href="contact.html" class="text-dark a-none">Contact Us</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3">

@@ -108,7 +108,6 @@
       background-color: #fff;
     }
     .cart-item img {
-      max-width: 150px;
       border-radius: 5px;
     }
     .cart-item h1 {
@@ -136,73 +135,162 @@
       margin-top: 10px;
       font-size: 0.875rem;
     }
+    .cart-quantity-section {
+            display: flex;
+            border:1px solid black;
+            align-items: center;
+            margin-top: 20px;
+            width: 120px;
+            margin-bottom: 20px;
+        }
+        .cart-quantity-button {
+            background-color: white;
+            color: black;
+            border: none;
+            
+            width: 35px;
+            height: 40px;
+            text-align: center;
+            line-height: 35px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .cart-quantity-button:hover {
+            background-color: #000000;
+            color: white;
+        }
+        .cart-quantity-input {
+            text-align: center;
+            width: 60px;
+            border: 1px solid #ccc;
+            height: 40px;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+   
     </style>
 </head>
 
 <body class="bg-white text-black">
 
-    <!-- Header/Navbar -->
-    <nav class="navbar  navbar-expand-lg navbar-light bg-white sticky-top px-3">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse px-5" id="navbarNav">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item"><a class="nav-link " href="shop.html" style="font-weight: 500;">SHOP</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html" style="font-weight: 500;">ABOUT</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html" style="font-weight: 500;">CONTACT US</a></li>
-            </ul>
-            <a class="navbar-brand fw-bold bg-none me-auto" href="index.html"><img src="img/logo.png"  height="80px" alt="logo"/></a>
-        
-            <div class="d-flex align-items-center">
-                <div class="input-group navbar-pill me-2 rounded-pill border">
-                    <span class="input-group-text bg-white border rounded-pill ">
-                        <i class="fas fa-search"></i>
-                    </span>
-                    <input type="text" class="form-controls p-2 border-0 rounded-pill" placeholder="Search...">
-                </div>
-                <button class="btn btn-none border-0 bg-0 mx-2"><i class="fa-regular fa-heart"></i></button>
-                <button class="btn btn-none border-0 mx-2"><i class="bi bi-bag"></i></button>
-                <button class="btn btn-none border-0 mx-2"><i class="fa-regular fa-user"></i></button>
-                <button class="btn btn-dark border-0 mx-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
-                    <i class="fas fa-bars fs-4"></i>
-                </button>
+    <!-- Navbar -->
+    <nav class="navbar ">
+        <div class="container">
+        <div class="navbar-links fw-bold fs-4">
+            <a href="#" class="fs-5">Shop</a>
+            <a href="#" class="fs-5">About</a>
+            <a href="#" class="fs-5">Contact</a>
+        </div>
+
+
+        <a href="#" class="navbar-brand">
+            <img src="img/logo.png" alt="Logo" class="desktop-logo" >
+            <img src="img/moonclon-logo.png" alt="Mobile Logo" class="mobile-logo">
+        </a>
+        <div class="search-bar-container-lg ">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search for products...">
             </div>
         </div>
+
+        <div class="navbar-icons">
+            <div class="icon-counter">
+                <i class="fa-regular fa-heart fa-lg"></i>
+                <span class="badge">0</span>
+            </div>
+            <div class="icon-counter">
+                <i class="fa-solid fa-bag-shopping fa-lg"></i>
+                <span class="badge">2</span>
+            </div>
+            <i class="fa-regular fa-user fa-lg"></i>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+        </div>
+    </div>
     </nav>
+
+    <!-- Search Bar (Mobile View) -->
+    <div class="search-bar-container d-md-none">
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search for products...">
+        </div>
+    </div>
+
+    <!-- Offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-end bg-dark" id="offcanvasMenu">
+        <div class="offcanvas-header">
+            
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas">X</button>
+        </div>
+        
+        <div class="offcanvas-body">
+            <div class="d-flex justify-content-center">
+            <div class="half-circle-container">
+                <img src="img/about-bg-2.png" alt="Half Circle and Square">
+            </div>
+        </div>
+            <ul>
+                <li><a href="#" class="fw-bold fs-5">Shop</a></li>
+                <li><a href="#" class="fw-bold fs-5">About</a></li>
+                <li><a href="#" class="fw-bold fs-5">Contact Us</a></li>
+            </ul>
+            <div class="d-flex justify-content-between center">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook fs-2"></i></a>
+                <a href="#"><i class="fab fa-twitter fs-2"></i></a>
+                <a href="#"><i class="fab fa-instagram fs-2"></i></a>
+            </div>
+        </div>
+        </div>
+    </div>
 <body >
     <section class="py-5">
-        <div class="container my-5">
+        <div class="container my-5 px-5">
             <!-- Cart Item -->
             <div class="row cart-item">
               <div class="col-md-3">
-                <img src="img/product-1.png" alt="Product Image">
+                <img src="img/product-1.png" alt="Product Image"  width="100%">
               </div>
-              <div class="col-md-9">
-                <h1>Neo Nude Foundation</h1>
-                <p class="price">₹4,999.00</p>
-                <p class="product-name">Neo Nude Foundation</p>
-                <div class="d-flex align-items-center justify-content-between mt-3">
+              <div class="col-md-3">
+
+              </div>
+              <div class="col-md-6">
+                <h1 class="fs-1">Neo Nude Foundation</h1>
+                <p class="price fs-4 fw-bold">₹4,999.00</p>
+                <p class="product-name ">Neo Nude Foundation</p>
+                <div class="d-flex align-items-center  mt-3">
                   <!-- Quantity Controls -->
-                  <div class="quantity-controls">
-                    <button class="btn btn-outline-secondary">-</button>
-                    <input type="number" value="1" class="form-control">
-                    <button class="btn btn-outline-secondary">+</button>
-                  </div>
-                  <button class="btn btn-primary">Add to Cart</button>
+                  <div class="cart-quantity-section">
+                    <button class="cart-quantity-button" id="decreaseQuantity">-</button>
+                    <input type="number" class="cart-quantity-input" id="quantityInput" value="1" min="1">
+                    <button class="cart-quantity-button" id="increaseQuantity">+</button>
                 </div>
-                <div class="wishlist mt-3">
+                  <button class="btn btn-dark ms-5 ">Add to Cart</button>
+                </div>
+                <div class="wishlist mt-3 text-primary fs-6">
                   <i class="bi bi-heart"></i> Add to Wishlist
                 </div>
-                <div class="share mt-2">
-                  <span>Share: </span>
-                  <a href="#"><i class="bi bi-facebook"></i></a>
-                  <a href="#"><i class="bi bi-twitter"></i></a>
-                  <a href="#"><i class="bi bi-whatsapp"></i></a>
+                <div class=" mt-2 text-dark fs-5">
+                  
+                  <a href="#"><i class="bi bi-facebook text-dark"></i></a>
+                  <a href="#"><i class="bi bi-twitter text-dark"></i></a>
+                  <a href="#"><i class="bi bi-whatsapp text-dark"></i></a>
                 </div>
               </div>
             </div>
     </section>
+    
+        
+    <div class="container d-flex justify-content-center">
+
+    
+        <img src="img/logo.png"  width="90%"/>
+    </div>
+    <hr>
     
         <!-- Footer -->
         <footer class="py-5">
@@ -214,9 +302,9 @@
                     <div class="col-md-3">
                         <h6 class="text-uppercase fs-5 fw-bold">Navigate</h6>
                         <ul class="list-unstyled " >
-                            <li><a href="#" class="text-dark a-none">Shop</a></li>
-                            <li><a href="#" class="text-dark a-none">About</a></li>
-                            <li><a href="#" class="text-dark a-none">Contact Us</a></li>
+                            <li><a href="shop.html" class="text-dark a-none">Shop</a></li>
+                            <li><a href="about.html" class="text-dark a-none">About</a></li>
+                            <li><a href="contact.html" class="text-dark a-none">Contact Us</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3">
@@ -251,4 +339,5 @@
     </body>
     
     </html>
+    
     
